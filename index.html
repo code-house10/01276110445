@@ -45,6 +45,153 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
     <link rel="stylesheet" href="css/custom_elements.css?jsQIM5wc" id="custom-elements-css">
     <link rel="stylesheet" href="css/code_editor_styles.css?QIVdEY8J" id="custom-css">
+
+    <style>
+        /* Floating Button Styles */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 25px; /* Moved to left side */
+            z-index: 9999;
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+        .floating-call-btn:hover {
+            transform: scale(1.05);
+            color: #fff;
+        }
+        .floating-call-btn .icon-circle {
+            background: #fff;
+            color: #0d6efd;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+        .floating-call-btn span {
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+        
+        /* Animation for Phone Icon */
+        @keyframes phoneRing {
+            0% { transform: rotate(0) scale(1); }
+            10% { transform: rotate(15deg) scale(1.1); }
+            20% { transform: rotate(-15deg) scale(1.1); }
+            30% { transform: rotate(15deg) scale(1.1); }
+            40% { transform: rotate(-15deg) scale(1.1); }
+            50% { transform: rotate(0) scale(1); }
+            100% { transform: rotate(0) scale(1); }
+        }
+        .ringing-icon-svg {
+            animation: phoneRing 1.5s infinite;
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Filtering Modal Styles */
+        #filterModalOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+        .filter-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            font-family: 'Cairo', sans-serif;
+        }
+        .close-filter {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+        }
+        .step-content { display: none; }
+        .step-content.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .filter-title { font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #333; }
+        .filter-btns { display: flex; gap: 10px; justify-content: center; }
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-yes { background: #0d6efd; color: white; }
+        .btn-no { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
+        
+        .final-number-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        }
+        .final-number-btn .modal-icon-svg {
+            background: white;
+            color: #25d366;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+            padding: 8px;
+        }
+        .final-number-btn .modal-icon-svg svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; }
+        .dot.active { background: #0d6efd; width: 20px; border-radius: 10px; }
+    </style>
 </head>
 
 <body class="" style="">
@@ -55,9 +202,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Floating Call Button -->
+    <div class="floating-call-btn" id="mainFloatingBtn">
+        <div class="icon-circle">
+            <svg class="ringing-icon-svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+        </div>
+        <span>إتصل واعرف اسعار نقل العفس</span>
+    </div>
 
+    <!-- Filtering Overlay UI -->
+    <div id="filterModalOverlay">
+        <div class="filter-modal-content">
+            <span class="close-filter" id="closeFilter">&times;</span>
+            
+            <!-- Step 1 -->
+            <div class="step-content active" id="step1">
+                <h3 class="filter-title">هل تبحث عن أفضل سعر لنقل عفشك الآن؟</h3>
+                <div class="filter-btns">
+                    <button class="filter-btn btn-yes" onclick="nextStep(2)">نعم، بالتأكيد</button>
+                    <button class="filter-btn btn-no" onclick="closeFilterUI()">لا شكراً</button>
+                </div>
+                <div class="progress-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
 
-    
+            <!-- Step 2 -->
+            <div class="step-content" id="step2">
+                <h3 class="filter-title">هل تريد التحدث مع فني لتحديد موعد النقل؟</h3>
+                <div class="filter-btns">
+                    <button class="filter-btn btn-yes" onclick="nextStep(3)">نعم، إتصل بي</button>
+                    <button class="filter-btn btn-no" onclick="closeFilterUI()">ليس الآن</button>
+                </div>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- Step 3 (Final) -->
+            <div class="step-content" id="step3">
+                <h3 class="filter-title" style="margin-bottom: 5px;">أنت جاهز للتواصل!</h3>
+                <p style="font-size: 14px; color: #666;">إضغط على الرقم أدناه للإتصال بنا فوراً:</p>
+                <a href="tel:01024888950" class="final-number-btn">
+                    <div class="modal-icon-svg">
+                        <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+                    </div>
+                    01024888950
+                </a>
+                <div class="progress-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot active"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const overlay = document.getElementById('filterModalOverlay');
+        const mainBtn = document.getElementById('mainFloatingBtn');
+        const closeBtn = document.getElementById('closeFilter');
+
+        mainBtn.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+            resetSteps();
+        });
+
+        closeBtn.addEventListener('click', closeFilterUI);
+        
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) closeFilterUI();
+        });
+
+        function closeFilterUI() {
+            overlay.style.display = 'none';
+        }
+
+        function nextStep(step) {
+            document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+        }
+
+        function resetSteps() {
+            document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
+            document.getElementById('step1').classList.add('active');
+        }
+    </script>
+
     <!-- Spinner Start -->
     <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
@@ -447,7 +682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="bg-light rounded h-100 p-3">
                                 <div class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
                                     <img class="align-self-center mb-3" src="img/icon/icon-06-primary.png" alt="">
-                                    <h5 class="mb-0">إتصل بنا نصلك فى اى مكان</h5>
+                                    <h5 class="mb-0">إتصل بنا nصلك فى اى مكان</h5>
                                 </div>
                             </div>
                         </div>
@@ -670,7 +905,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script id="custom-js" src="js/code_editor_scripts.js?Wn0xyMAY"></script>
 
 
-    <script type="text/javascript">checkdirect(16,1)</script>
+    <script type="text/javascript">
+        // Added safety check to prevent ReferenceError if checkdirect is not defined
+        if (typeof checkdirect === 'function') {
+            checkdirect(16, 1);
+        }
+    </script>
 
 
 <input type="hidden" id="hidLocation" value="https://www.data.codehouse.host/"/>
