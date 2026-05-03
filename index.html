@@ -12,7 +12,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
     <meta charset="utf-8">
-    <title>شركة الاندلس لنقل وتغليف الاثاث 01115872823</title>
+    <title>شركة بروفيشنال موڤر لنقل وتغليف الاثاث 01125712282</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -50,8 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         /* Floating Button Styles */
         .floating-call-btn {
             position: fixed;
-            bottom: 25px;
-            left: 25px; /* Moved to left side */
+            left: 25px;
             z-index: 9999;
             background-color: #0d6efd;
             color: white;
@@ -66,6 +65,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: 'Cairo', sans-serif;
             direction: rtl;
         }
+        
+        /* New WhatsApp Floating Button - Centered Right Side */
+        .floating-whatsapp-btn {
+            position: fixed;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            z-index: 9999;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+        }
+
+        .floating-whatsapp-btn:hover {
+            transform: translateY(-50%) scale(1.05);
+            color: #fff;
+            background-color: #1ebe57;
+        }
+
+        .floating-whatsapp-btn .icon-circle {
+            background: #fff;
+            color: #25d366;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
         .floating-call-btn:hover {
             transform: scale(1.05);
             color: #fff;
@@ -81,13 +120,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             justify-content: center;
             margin-left: 10px;
         }
-        .floating-call-btn span {
+        .floating-call-btn span, .floating-whatsapp-btn span {
             font-size: 11px;
             line-height: 1.2;
             font-weight: 600;
         }
         
-        /* Animation for Phone Icon */
+        /* Animation for Icons */
         @keyframes phoneRing {
             0% { transform: rotate(0) scale(1); }
             10% { transform: rotate(15deg) scale(1.1); }
@@ -202,13 +241,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Floating Call Button -->
-    <div class="floating-call-btn" id="mainFloatingBtn">
+    <!-- Floating Call Button 1 (Left Side - Bottom) -->
+    <div class="floating-call-btn call-trigger-btn" style="bottom: 25px;" data-phone="01284686536">
         <div class="icon-circle">
             <svg class="ringing-icon-svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
         </div>
-        <span>إتصل واعرف اسعار نقل العفس</span>
+        <span>إتصل بنا (01284686536)</span>
     </div>
+
+    <!-- Floating Call Button 2 (Left Side - Top) -->
+    <div class="floating-call-btn call-trigger-btn" style="bottom: 90px; background-color: #dc3545;" data-phone="01125712282">
+        <div class="icon-circle" style="color: #dc3545;">
+            <svg class="ringing-icon-svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
+        </div>
+        <span>إتصل بنا (01125712282)</span>
+    </div>
+
+    <!-- Floating WhatsApp Button (Middle Right Side) -->
+    <a href="https://wa.me/201284686536" target="_blank" class="floating-whatsapp-btn">
+        <div class="icon-circle">
+            <svg class="ringing-icon-svg" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.19-.3a8.132 8.132 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.24-8.24m-3.96 3.03c-.15 0-.35.05-.53.25-.19.19-.72.7-.72 1.71s.73 1.99.83 2.12c.11.13 1.44 2.19 3.48 3.07.49.21.87.33 1.16.43.49.16.94.13 1.29.08.39-.06 1.21-.5 1.38-.97.17-.48.17-.89.12-.97-.05-.08-.18-.13-.38-.23s-1.21-.6-1.4-.67c-.18-.08-.32-.12-.45.08-.13.19-.51.67-.62.81-.11.13-.23.15-.43.05-.2-.11-.84-.31-1.61-1-.6-.53-1-1.18-1.12-1.38-.11-.2-.01-.31.09-.4.09-.09.2-.23.29-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.01-.35-.04-.1-.45-1.09-.62-1.5-.16-.4-.32-.34-.45-.35h-.34z"/></svg>
+        </div>
+        <span>تواصل معنا واتساب</span>
+    </a>
 
     <!-- Filtering Overlay UI -->
     <div id="filterModalOverlay">
@@ -247,11 +302,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="step-content" id="step3">
                 <h3 class="filter-title" style="margin-bottom: 5px;">أنت جاهز للتواصل!</h3>
                 <p style="font-size: 14px; color: #666;">إضغط على الرقم أدناه للإتصال بنا فوراً:</p>
-                <a href="tel:01024888950" class="final-number-btn">
+                <a href="#" class="final-number-btn" id="finalCallLink">
                     <div class="modal-icon-svg">
                         <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
                     </div>
-                    01024888950
+                    <span id="finalCallText">الرقم</span>
                 </a>
                 <div class="progress-dots">
                     <div class="dot"></div>
@@ -264,12 +319,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         const overlay = document.getElementById('filterModalOverlay');
-        const mainBtn = document.getElementById('mainFloatingBtn');
         const closeBtn = document.getElementById('closeFilter');
+        const finalCallLink = document.getElementById('finalCallLink');
+        const finalCallText = document.getElementById('finalCallText');
 
-        mainBtn.addEventListener('click', () => {
-            overlay.style.display = 'flex';
-            resetSteps();
+        // Dynamically Handle All Call Buttons
+        document.querySelectorAll('.call-trigger-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const phoneNumber = btn.getAttribute('data-phone');
+                
+                // Update Modal Content with the specific button's phone number
+                finalCallLink.href = 'tel:' + phoneNumber;
+                finalCallText.innerText = phoneNumber;
+                
+                // Show Overlay and Reset Steps
+                overlay.style.display = 'flex';
+                resetSteps();
+            });
         });
 
         closeBtn.addEventListener('click', closeFilterUI);
@@ -304,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <small class="fa fa-phone-alt me-2"></small>
-                    <small>01115872823</small>
+                    <small>01125712282</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <small class="far fa-envelope-open me-2"></small>
@@ -325,17 +391,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Topbar End -->
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5" style="top: -100px; font-size: 11px;">
-        <img src="images/aums1nEMxovognTJA3LP7DjS8Tz3r8D20lhrGtL4.png" class="img-responsive" style="max-width: none; max-height: none; width: 63px; height: 58px;"><span style="background-color: transparent; font-size: 14px;">شركة الاندلس لنقل وتغليف الأثاث</span>
+        <img src="images/aums1nEMxovognTJA3LP7DjS8Tz3r8D20lhrGtL4.png" class="img-responsive" style="max-width: none; max-height: none; width: 63px; height: 58px;"><span style="background-color: transparent; font-size: 14px;">شركة بروفيشنال موڤر لنقل وتغليف الأثاث</span>
         <a href="index.html" class="navbar-brand d-flex align-items-center">
         </a>
         <h2 style="">
-            <div style="text-align: center;"><span style="background-color: transparent; max-width: none; max-height: none; width: 646px; height: 44px; font-size: 18px;">
-                    <div style="text-align: right;"><span style="background-color: transparent; max-width: none; max-height: none; width: 525px; height: 32px; margin: 0px 0px 0px 38px;">01115872823 - 01276110445</span></div>
+            <div style="text-align: center;"><span style="background-color: transparent; font-size: 14px;">
+                    <div style="text-align: right;"><span style="background-color: transparent; max-width: none; max-height: none; width: 525px; height: 32px; margin: 0px 0px 0px 38px;">01125712282 - 01284686536</span></div>
                 </span></div>
         </h2>
         <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
         </div>
-        <a href="tel:01115872823" class="btn btn-primary px-3 d-none d-lg-block">إتصل اليوم واحجز</a>
+        <a href="tel:01125712282" class="btn btn-primary px-3 d-none d-lg-block">إتصل اليوم واحجز</a>
     </nav>
     <!-- Navbar End -->
     <!-- Carousel Start -->
@@ -401,12 +467,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
                     <div class="h-100" style="text-align: center;">
                         <h1 class="display-6 mb-5">
-                            <div style="text-align: center;"><span style="background-color: transparent; font-size: 36px;">شركة الاندلس لنقل العفش بخصم كبير&nbsp;</span></div>
-                            <div style="text-align: center;"><span style="background-color: transparent; font-size: 23px; color: rgb(231, 209, 9);">01115872823 -&nbsp;01115872823</span></div>
+                            <div style="text-align: center;"><span style="background-color: transparent; font-size: 36px;">شركة بروفيشنال موڤر لنقل العفش بخصم كبير&nbsp;</span></div>
+                            <div style="text-align: center;"><span style="background-color: transparent; font-size: 23px; color: rgb(231, 209, 9);">01125712282 -&nbsp;01125712282</span></div>
                         </h1>
                         <p class="fs-5 text-primary mb-4" style="color: rgb(230, 34, 16);"></p>
                         <div class=""><span style="font-size: 1.25rem;">
-                                <div dir="rtl" style="text-align: justify;"><span style="font-size: 15px;">شركة الاندلس لنقل الاثاث أفضل شركة نقل اثاث في الجمهورية تساعد الأفراد والشركات على نقل الأثاث من منازلهم أو مكاتبهم من مكان إلى آخر</span></div>
+                                <div dir="rtl" style="text-align: justify;"><span style="font-size: 15px;">شركة بروفيشنال موڤر لنقل الاثاث أفضل شركة نقل اثاث في الجمهورية تساعد الأفراد والشركات على نقل الأثاث من منازلهم أو مكاتبهم من مكان إلى آخر</span></div>
                             </span></div>
                         <p></p>
                         <div class="row g-4 mb-4">
@@ -423,8 +489,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </div>
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center" style="font-size: 58px; color: rgb(20, 137, 226);">
-                                    <h5 class="mb-0" style="margin: 0px; max-width: none; max-height: none; width: 519px; height: 25.6406px; color: rgb(194, 16, 16);">01115872823</h5>
-                                    <h5 class="mb-0" style="margin: 0px; max-width: none; max-height: none; width: 519px; height: 25.6406px; color: rgb(194, 16, 16);">01115872823</h5>
+                                    <h5 class="mb-0" style="margin: 0px; max-width: none; max-height: none; width: 519px; height: 25.6406px; color: rgb(194, 16, 16);">01125712282</h5>
+                                    <h5 class="mb-0" style="margin: 0px; max-width: none; max-height: none; width: 519px; height: 25.6406px; color: rgb(194, 16, 16);">01125712282</h5>
                                 </div>
                             </div>
                         </div>
@@ -454,11 +520,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/8urZnKeSXWF1RAzuRPD3ANi6hHqBxEBXu1ud1U9z.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بمدينة نصر</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بمدينة نصر</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -473,11 +539,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/i86l56cwqd1VnyhPSSIcU2QUHeXmr3ezMlIIID01.png" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بمصر الجديدة</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بمصر الجديدة</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -492,11 +558,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/a5nlD12ulzjAQjdrYyRJC1Wwn3IERKBjjgOWpm2M.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالتجمع الخامس</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالتجمع الخامس</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -511,11 +577,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/Mh3tBIVaa37BPqkPa3rlldnjzUWjciOrj6l3P8VC.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالرحاب</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالرحاب</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -541,11 +607,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/yfiNU9wsfhwqsg8rvErmiXePAGeeAiY0OnRULv1I.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالشيخ زايد</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالشيخ زايد</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -560,11 +626,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/8nkqzobQDl9NNlJm5TR1OrnmqZMyz7ZdVDHY0dPf.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالمعادى</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالمعادى</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -579,11 +645,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/72R75gqbCOuHHyMDk2Dsw6fn8bAHr1oer3wZ8nGf.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالمهندسين</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالمهندسين</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -598,11 +664,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <img class="img-fluid" src="images/6DnU5sQAE7dEyaSEElReKX9VVAxPDD8NLYxxQ0GO.jpg" alt="">
                         <div class="text-center p-4">
                             <h5>شركة نقل اثاث بالدقى</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                         </div>
                         <div class="team-text text-center bg-white p-4">
                             <h5>شركة نقل اثاث بالدقى</h5>
-                            <p>01115872823 - 01276110445</p>
+                            <p>01125712282 - 01284686536</p>
                             <div class="d-flex justify-content-center">
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-square btn-light m-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -631,7 +697,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="text-light mb-5"></p>
                         <div style="text-align: center;"></div>
                         <p></p>
-                        <a href="tel:01115872823" style="display: flex; justify-content: center;" class="btn btn-secondary py-3 px-5">إتصل الأن</a>
+                        <a href="tel:01125712282" style="display: flex; justify-content: center;" class="btn btn-secondary py-3 px-5">إتصل الأن</a>
                     </div>
                 </div>
                 <div style="text-align: center; visibility: hidden; animation-delay: 0.5s; animation-name: none;" class="col-lg-6 facts-counter wow fadeIn" data-wow-delay="0.5s">
@@ -668,12 +734,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                     <h1 class="display-6 mb-5" style="font-size: 32px;">
-                        <div style="text-align: center;"><span style="background-color: transparent;">&nbsp;ننصحك بالتعامل مع شركة الاندلس لنقل العفش</span></div>
+                        <div style="text-align: center;"><span style="background-color: transparent;">&nbsp;ننصحك بالتعامل مع شركة بروفيشنال موڤر لنقل العفش</span></div>
                     </h1>
                     <p class="mb-4" style="font-size: 15px;"></p>
                     <div style="text-align: center; color: rgb(33, 6, 6); font-size: 18px;">
                         <div style="text-align: right;" class="">
-                            <div dir="rtl" style="text-align: justify;">لقد كانت شركتنا شركة الاندلس لنقل الاثاث مصدر موثوق به لسنوات كثيرة كجزء من أكبر منظمة في مصر تقدم خدمات النقل والتخزين ،و تقدم مجموعة كاملة من خدمات النقل القابلة للتخصيص وهي قادرة على المساعدة في التحركات من أي حجم ؛ لا يهم إلى أين تذهب بعد ذلك. اكتشف ما الذي يميزنا عن شركات النقل الأخرى ودع عمالنا يتعاملون مع خطوتك الكبيرة التالية.</div>
+                            <div dir="rtl" style="text-align: justify;">لقد كانت شركتنا شركة بروفيشنال موڤر لنقل الاثاث مصدر موثوق به لسنوات كثيرة كجزء من أكبر منظمة في مصر تقدم خدمات النقل والتخزين ،و تقدم مجموعة كاملة من خدمات النقل القابلة للتخصيص وهي قادرة على المساعدة في التحركات من أي حجم ؛ لا يهم إلى أين تذهب بعد ذلك. اكتشف ما الذي يميزنا عن شركات النقل الأخرى ودع عمالنا يتعاملون مع خطوتك الكبيرة التالية.</div>
                         </div>
                     </div>
                     <p></p>
@@ -738,7 +804,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4"></p>
                         <div style="text-align: center; font-size: 15px;">تغليف شامل للعفش بأجود خامات التغليف</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
@@ -751,7 +817,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4"></p>
                         <div style="text-align: center; font-size: 15px;">سيارات نقل عفش مجهزة&nbsp; ومغلقة لنقل العفش بأمان</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
@@ -764,7 +830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4" style="font-size: 15px;"></p>
                         <div style="text-align: center; font-size: 15px;">عمالة فنية مخصصة ومدربة لنقل العفش بامان تام</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
@@ -777,7 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4" style="font-size: 15px;"></p>
                         <div style="text-align: center; font-size: 15px;">لدينا نجاريين لفك وتركيب جميع انواع الغرف</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
@@ -790,7 +856,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4" style="font-size: 15px;"></p>
                         <div style="text-align: center; font-size: 15px;">لدبنا مجموعة مميزة لفك زتركيب جميع انواع التكييفات</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
@@ -805,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <p class="mb-4" style="font-size: 15px;"></p>
                         <div style="text-align: center; font-size: 15px;">ونش هيدروليكى مخصص لرفع وتنزيل الاثاث من الادوار العالية</div>
                         <p></p>
-                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01115872823">إحجز اليوم</a>
+                        <a style="display: flex; justify-content: center;" class="btn btn-light px-3" href="tel:01125712282">إحجز اليوم</a>
                     </div>
                 </div>
             </div>
@@ -821,7 +887,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div style="text-align: center;"><span style="background-color: transparent; font-size: 27px; max-width: none; max-height: none; width: 514.5px; height: 34.1406px; text-align: center;">خدمة 24 ساعة - نعمل طوال ايام الاسبوع وفى الاجازات الرسمية</span></div>
                     </h1>
                     <span style="background-color: initial; color: rgb(243, 239, 239); font-size: 16px;">
-                        <div style="text-align: center;"><b style="background-color: initial;">شركة الاندلس لنقل العفش</b><span style="background-color: initial;"> إذا كنت تبحث عن طريقة موثوقة وبأسعار معقولة لنقل أثاثك عليك التفكير في استئجار خدمة نقل سيارات مغلقة النقل المغلق بالسيارة هو أفضل وسيلة لحماية أثاثك من التلف أثناء النقل</span></div>
+                        <div style="text-align: center;"><b style="background-color: initial;">شركة بروفيشنال موڤر لنقل العفش</b><span style="background-color: initial;"> إذا كنت تبحث عن طريقة موثوقة وبأسعار معقولة لنقل أثاثك عليك التفكير في استئجار خدمة نقل سيارات مغلقة النقل المغلق بالسيارة هو أفضل وسيلة لحماية أثاثك من التلف أثناء النقل</span></div>
                     </span>
                     <p class="text-white mb-5" style="font-size: 16px;"></p>
                     <div style="text-align: center;"></div>
@@ -831,7 +897,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <img class="flex-shrink-0 rounded-circle me-3" src="images/JWyvbJ4FUxmjE5lpfXxBljNTzeZ8YkwdIiPj7PiX.png" alt="">
                             <h5 class="text-white mb-0">
                                 <div <span="" style="background-color: transparent; font-size: 15px;">
-                                    <div <span="">إتصل بنا : 01115872823&nbsp;</div>
+                                    <div <span="">إتصل بنا : 01125712282&nbsp;</div>
                                 </div>
                             </h5>
                         </div>
@@ -843,14 +909,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
     <!-- Appointment End -->
-    <!-- Testimonial Start -->
-    <!-- Testimonial End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="text-white mb-4" style="text-align: center; font-size: 19px;">الاندلس لنقل العفش</h1>
+                    <h1 class="text-white mb-4" style="text-align: center; font-size: 19px;">بروفيشنال موڤر لنقل العفش</h1>
                     <p></p>
                     <div>يجب عليك التحقق من شركة النقل الخاصة بك ما إذا كانت تستخدم سيارات لنقل الأثاث مغلقة أم لا. لنقل أثاثك بكفاءة وفعالية من حيث التكلفة ، يجب أن يتم التحميل والتفريغ بعناية ، والعربات هي الخيار الأكثر أمانًا لذلك.</div>
                     <p></p>
@@ -862,7 +926,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <p><i class="fa fa-phone-alt me-3"></i>01115872823 - 01276110445</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>01125712282 - 01284686536</p>
                     <p><i class="fa fa-envelope me-3"></i>moh0102242@gmail.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -879,11 +943,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        © <a href="#">شركة الاندلس لنقل العفش</a>, All Right Reserved.
+                        © <a href="#">شركة بروفيشنال موڤر لنقل العفش</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="tel:01115872823">كود هاوس</a>
+                        Designed By <a href="tel:01125712282">كود هاوس</a>
                     </div>
                 </div>
             </div>
@@ -904,23 +967,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="js/main.js"></script>
     <script id="custom-js" src="js/code_editor_scripts.js?Wn0xyMAY"></script>
 
-
     <script type="text/javascript">
-        // Added safety check to prevent ReferenceError if checkdirect is not defined
         if (typeof checkdirect === 'function') {
             checkdirect(16, 1);
         }
     </script>
 
-
 <input type="hidden" id="hidLocation" value="https://www.data.codehouse.host/"/>
 <script>var clpconfig = {};</script>
-    
 <script type="text/javascript" src="https://www.data.codehouse.host/landing.js"></script>
 
-
-
-
 </body>
-
 </html>
